@@ -9,7 +9,8 @@ app.use("/auth", authRouter);
 const start = async () => {
   try {
     await mongoose.connect(
-      `mongodb+srv://Alex:Alex123@cluster0.nenb5.mongodb.net/auth_roles?retryWrites=true&w=majority`
+      `mongodb+srv://Alex:Alex123@cluster0.nenb5.mongodb.net/auth_roles?retryWrites=true&w=majority`,
+      { useNewUrlParser: true, useUnifiedTopology: true }
     );
     app.listen(PORT, () => {
       console.log(`Server started on port ${PORT}`);
